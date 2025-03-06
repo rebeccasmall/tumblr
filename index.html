@@ -9,10 +9,28 @@
     {block:Description}
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
-    <!-- Adds background color option to customize menu -->
-    <meta name="color:Background" content="#000000">
+
     <!-- Adds font choice option to cusotmize menu -->
     <meta name="font:Body" content="Georgia" />
+    <!-- Adds background color option to customize menu -->
+    <meta name="color:Background" content="#000000" />
+    
+    <!-- Section to add CSS -->
+    <style type="text/css">
+
+        body {
+          background-color: {color:Background};
+          font-family: {font:Body};
+          margin: 0;
+        }
+
+        #sidebar {
+          background-color: white;
+          width: 260px;
+        }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="sidebar"></div>
+  </body>
 </html>
