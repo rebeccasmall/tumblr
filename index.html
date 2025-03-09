@@ -103,5 +103,22 @@
       {block:SubmissionsEnabled}<a href="/submit"><div class                   ="links">{SubmitLabel}</div></a>{/block:SubmissionsEnabled}
       {block:HasPages}{block:Pages}<a href="{url}"><div class                  ="links">{Label}</div></a>{/block:Pages}{/block:HasPages}
     </div>
+    
+    <!-- Main post content -->
+    {block:Posts}
+
+    <!-- Photo post -->
+    {block:Photo}
+      {LinkOpenTag}<img src="{PhotoURL-500}" />{LinkCloseTag}
+      {block:Caption}{Caption}{/block:Caption}
+    {/block:Photo}
+
+    {block:Photoset}
+      {Photoset-500}
+      {block:Caption}{Caption}{/block:Caption}
+    {/block:Photoset}
+
+    {/block:Posts}
+
   </body>
 </html>
