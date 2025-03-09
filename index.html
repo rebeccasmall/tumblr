@@ -69,7 +69,16 @@
         #sidebar .description a:hover {
              color: {color:Secondary Colour};
         }
-        
+
+        #sidebar .links {
+              background-color: {color:Primary Colour};
+              color: white;
+              font-size: 11px;
+              text-align: center;
+              padding: 3px 5px;
+              margin: 2px;
+        }
+
     </style>
   </head>
   <body>
@@ -77,6 +86,12 @@
       <img class="image" src="{image:Sidebar}" />
       <div class="title"><a href="/">{Title}</a></div>
       <div class="description">{Description}</div>
+
+      <!-- Adding the ask, submit, and page links -->
+      {block:AskEnabled}<a href="/ask"><div class="links">
+      {AskLabel}</div></a>{/block:AskEnabled}
+      {block:SubmissionsEnabled}<a href="/submit"><div class                   ="links">{SubmitLabel}</div></a>{/block:SubmissionsEnabled}
+      {block:HasPages}{block:Pages}<a href="{url}"><div class                  ="links">{Label}</div></a>{/block:Pages}{/block:HasPages}
     </div>
   </body>
 </html>
