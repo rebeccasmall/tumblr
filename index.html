@@ -107,7 +107,6 @@
     <!-- Main post content -->
     {block:Posts}
 
-    <!-- Photo post -->
     {block:Photo}
       {LinkOpenTag}<img src="{PhotoURL-500}" />{LinkCloseTag}
       {block:Caption}{Caption}{/block:Caption}
@@ -117,6 +116,45 @@
       {Photoset-500}
       {block:Caption}{Caption}{/block:Caption}
     {/block:Photoset}
+
+    {block:Video}
+      {Video-500}
+      {block:Caption}{Caption}{/block:Caption}
+    {/block:Video}
+
+    {block:Audio}
+      {AudioPlayerWhite}
+      <br />{PlayCountWithLabel}
+      {block:Caption}<br />{Caption}{/block:Caption}
+    {/block:Audio}
+
+    {block:Quote}
+      “{Quote}”
+      {block:Source}<br />{Source}{/block:Source}
+    {/block:Quote}
+
+    {block:Text}
+      {block:Title}{Title}<br />{/block:Title}
+      {Body}
+    {/block:Text}
+
+    {block:Answer}
+      {Question}<br />
+      {Asker}<br />
+      {Answer}
+    {/block:Answer}
+    
+    {block:Chat}
+      {block:Title}{Title}<br />{/block:Title}
+      {block:Lines}
+      {block:Label}<strong>{Label}</strong>{/block:Label} {Line}              <br  />
+      {/block:Lines}
+    {/block:Chat}
+
+    {block:Link}
+      <a href="{URL}" >{Name}</a>
+      {block:Description}<br />{Description}{/block:Description}
+    {/block:Link}
 
     {/block:Posts}
 
