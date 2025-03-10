@@ -114,6 +114,26 @@
               padding-left: 10px;
         }
 
+        img {
+            border: 0;
+            max-width: 100%;
+        }
+
+        #content #posts {
+            background-color: white;
+            width: 500px;
+            margin: 0 auto 20px;
+            padding:10px;
+        }
+
+        #content #posts .title {
+            font-size: 22px;
+        }
+
+        #content #posts .text {
+            font-size:11px;
+        }
+
     </style>
   </head>
   <body>
@@ -132,6 +152,8 @@
     <!-- Main post content -->
     <div id="content">
     {block:Posts}
+    
+    <div id="posts">    
 
     {block:Photo}
       {LinkOpenTag}<img src="{PhotoURL-500}" />{LinkCloseTag}
@@ -155,19 +177,19 @@
     {/block:Audio}
 
     {block:Quote}
-      “{Quote}”
-      {block:Source}<br />{Source}{/block:Source}
+      <div class="title">“{Quote}”</div>
+      {block:Source}<div class="text"><br />{Source}</div>{/block:Source}
     {/block:Quote}
 
     {block:Text}
-      {block:Title}{Title}<br />{/block:Title}
-      {Body}
+      {block:Title}<div class="title">{Title}</div><br />{/block:Title}
+      <div class="text">{Body}</div>
     {/block:Text}
 
     {block:Answer}
-      {Question}<br />
-      {Asker}<br />
-      {Answer}
+      <div class="title">{Question}</div><br />
+      <div class="text">{Asker}</div><br />
+      <div class="text">{Answer}</div>
     {/block:Answer}
     
     {block:Chat}
@@ -181,6 +203,8 @@
       <a href="{URL}" >{Name}</a>
       {block:Description}<br />{Description}{/block:Description}
     {/block:Link}
+    
+    </div>
 
     {/block:Posts}
     </div>
